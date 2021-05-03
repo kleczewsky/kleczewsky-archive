@@ -152,12 +152,7 @@ main {
         flex-direction: column;
 
         border-top: 3px solid;
-        border-image: linear-gradient(
-                90deg,
-                rgb(124, 54, 190) 0%,
-                rgb(173, 40, 69) 100%
-            )
-            1;
+        border-image: linear-gradient(90deg, #7c36be 0%, #ad2845 100%) 1;
 
         > * {
             align-self: center;
