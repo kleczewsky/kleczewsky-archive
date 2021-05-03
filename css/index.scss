@@ -184,12 +184,16 @@ main {
 }
 
 .aboutme {
-    min-height: calc(100vh - 112px - 47px);
+    min-height: calc(100vh - 112px);
+    position: relative;
+    overflow: hidden;
 
     display: flex;
     height: 100%;
+
     .info {
         background-image: url("../assets/img/info-bckg.jpg");
+
         background-size: cover;
 
         padding: 3rem;
@@ -228,6 +232,9 @@ main {
             letter-spacing: 2px;
             text-shadow: 5px 5px 5px black;
         }
+        a {
+            color: v(secondary);
+        }
     }
     .board {
         padding: 3rem;
@@ -235,13 +242,15 @@ main {
         flex: 1;
 
         display: flex;
+        flex-direction: column;
 
-        overflow: hidden;
+        align-items: center;
         .card-stack {
             display: inline-flex;
             position: relative;
             width: 400px;
-            height: 500px;
+            height: 600px;
+            justify-content: center;
 
             .card {
                 position: absolute;
@@ -253,7 +262,8 @@ main {
                 box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
 
                 p {
-                    padding: 2rem;
+                    padding: 1rem;
+                    line-height: 1.5;
                     text-align: center;
                 }
 
@@ -300,19 +310,19 @@ main {
                 &:nth-child(2) {
                     z-index: 2;
                     transform: translate(10px, 10px);
-
                     background-color: #191b3b;
 
                     &.active {
-                        transform: translate(100%, 10px);
+                        transform: translate(-100%, 14px);
                     }
                 }
                 &:nth-child(3) {
                     z-index: 1;
                     transform: translate(20px, 20px);
+                    background-color: #191b3b;
 
                     &.active {
-                        transform: translate(200%, 0px);
+                        transform: translate(100%, 14px);
                     }
                 }
 
@@ -325,8 +335,7 @@ main {
             width: 500px;
             margin: 0 2rem;
             color: whitesmoke;
-            background: linear-gradient(0deg, #2f0961, transparent);
-
+            background: linear-gradient(0deg, #08091d, #12132b);
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
 
             line-height: 1.5rem;
@@ -342,7 +351,6 @@ main {
 
                 > div {
                     width: 60%;
-                    text-align: center;
                 }
             }
 
@@ -352,6 +360,9 @@ main {
 
             h1 {
                 margin-bottom: 2rem;
+            }
+            ul {
+                margin-left: 3rem;
             }
         }
     }
@@ -383,7 +394,6 @@ main {
         }
 
         .board {
-            height: 800px;
             flex: auto;
         }
     }
@@ -397,10 +407,6 @@ main {
             flex-direction: row;
             .footer-contact {
                 margin-right: auto;
-            }
-            .footer-textWrap {
-                > svg {
-                }
             }
         }
     }

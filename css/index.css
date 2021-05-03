@@ -246,7 +246,9 @@ main footer i {
 }
 
 .aboutme {
-  min-height: calc(100vh - 112px - 47px);
+  min-height: calc(100vh - 112px);
+  position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,6 +302,10 @@ main footer i {
   text-shadow: 5px 5px 5px black;
 }
 
+.aboutme .info a {
+  color: var(--secondary);
+}
+
 .aboutme .board {
   padding: 3rem;
   background-color: var(--content-background);
@@ -309,7 +315,13 @@ main footer i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .aboutme .board .card-stack {
@@ -318,7 +330,10 @@ main footer i {
   display: inline-flex;
   position: relative;
   width: 400px;
-  height: 500px;
+  height: 600px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .aboutme .board .card-stack .card {
@@ -334,7 +349,8 @@ main footer i {
 }
 
 .aboutme .board .card-stack .card p {
-  padding: 2rem;
+  padding: 1rem;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -385,19 +401,20 @@ main footer i {
 }
 
 .aboutme .board .card-stack .card:nth-child(2).active {
-  -webkit-transform: translate(100%, 10px);
-          transform: translate(100%, 10px);
+  -webkit-transform: translate(-100%, 14px);
+          transform: translate(-100%, 14px);
 }
 
 .aboutme .board .card-stack .card:nth-child(3) {
   z-index: 1;
   -webkit-transform: translate(20px, 20px);
           transform: translate(20px, 20px);
+  background-color: #191b3b;
 }
 
 .aboutme .board .card-stack .card:nth-child(3).active {
-  -webkit-transform: translate(200%, 0px);
-          transform: translate(200%, 0px);
+  -webkit-transform: translate(100%, 14px);
+          transform: translate(100%, 14px);
 }
 
 .aboutme .board .tech {
@@ -405,8 +422,8 @@ main footer i {
   width: 500px;
   margin: 0 2rem;
   color: whitesmoke;
-  background: -webkit-gradient(linear, left bottom, left top, from(#2f0961), to(transparent));
-  background: linear-gradient(0deg, #2f0961, transparent);
+  background: -webkit-gradient(linear, left bottom, left top, from(#08091d), to(#12132b));
+  background: linear-gradient(0deg, #08091d, #12132b);
   -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
           box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.315);
   line-height: 1.5rem;
@@ -424,7 +441,6 @@ main footer i {
 
 .aboutme .board .tech .tech-background > div {
   width: 60%;
-  text-align: center;
 }
 
 .aboutme .board .tech .tech-section {
@@ -433,6 +449,10 @@ main footer i {
 
 .aboutme .board .tech h1 {
   margin-bottom: 2rem;
+}
+
+.aboutme .board .tech ul {
+  margin-left: 3rem;
 }
 
 @media only screen and (max-width: 1570px) {
@@ -466,7 +486,6 @@ main footer i {
     border-right: none;
   }
   .aboutme .board {
-    height: 800px;
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto;
